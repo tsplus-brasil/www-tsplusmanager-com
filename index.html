@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSplus Manager — Centralized Administration for Your TSplus Servers</title>
+  <meta name="description" content="TSplus Manager (TSM) is the central command center for your TSplus fleet. Manage servers, sessions and users, push Remote Access & Advanced Security commands, monitor logs, and get answers from a private, self-hosted AI — on desktop and mobile." />
+  <meta name="theme-color" content="#F7931E" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TSplus Manager — Centralized TSplus Server Administration" />
+  <meta property="og:description" content="One console for every TSplus server. Commands, sessions, logs and a private AI assistant across desktop and mobile." />
+  <meta property="og:image" content="https://i.imgur.com/X2EMo3G.png" />
+  <meta property="og:url" content="https://tsplusmanager.com" />
+
+  <link rel="icon" type="image/png" href="assets/tsm-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="TSplus Manager home">
+        <img src="assets/tsm-logo.png" alt="TSplus" class="brand-logo" />
+        <span class="brand-badge">Manager</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#control">Control</a>
+        <a href="#ai">Private AI</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Request a demo</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">TSplus Manager · TSM</span>
+          <h1>One console to command<br>your entire <span class="accent">TSplus fleet</span>.</h1>
+          <p class="lead">
+            Centralize every TSplus server in a single place. Push Remote Access &amp;
+            Advanced Security commands, watch sessions and users in real time, monitor
+            logs, and ask a <strong>private AI</strong> — all from desktop and mobile.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary btn-lg">Request a demo</a>
+            <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
+          </div>
+          <ul class="hero-platforms" aria-label="Supported platforms">
+            <li>Windows</li>
+            <li>Linux</li>
+            <li>macOS</li>
+            <li class="sep">·</li>
+            <li>Android</li>
+            <li>iOS</li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <!-- IMAGE PLACEHOLDER: main dashboard -->
+          <figure class="shot shot-hero placeholder" data-label="Main dashboard screenshot" data-ratio="16 / 10">
+            <figcaption>Drop your dashboard screenshot here</figcaption>
+          </figure>
+          <!-- IMAGE PLACEHOLDER: mobile app, floating -->
+          <figure class="shot shot-mobile placeholder" data-label="Mobile app" data-ratio="9 / 19">
+            <figcaption>Mobile app</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS / TRUST BAR ===================== -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Console for unlimited servers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Platforms — Windows, Linux, macOS, Android, iOS</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Private AI — your data never leaves your control</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Full</span>
+          <span class="stat-label">Connection APIs included out of the box</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES GRID ===================== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Everything in one place</span>
+          <h2>Built to manage TSplus at scale</h2>
+          <p class="section-sub">
+            TSplus Manager talks natively to Remote Access and Advanced Security on
+            every server, so you administer the whole environment without jumping
+            between machines.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🗂️</div>
+            <h3>Centralized servers</h3>
+            <p>Register and group all your TSplus servers into a single, organized console with health at a glance.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Remote commands</h3>
+            <p>Send commands to Remote Access and Advanced Security across one server or many — instantly and securely.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Sessions &amp; users</h3>
+            <p>List active sessions and users in real time, then disconnect or log out any user with a single click.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Product configuration</h3>
+            <p>Read and manage the general settings of your TSplus products remotely, keeping every server consistent.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Log monitoring</h3>
+            <p>Stream and monitor logs from your servers to spot issues, audit activity, and stay ahead of incidents.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>Private AI assistant</h3>
+            <p>Query your fleet in plain language with self-hosted AI models — insights without sending data to commercial clouds.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTROL / REMOTE COMMANDS (image left) ===================== -->
+    <section class="section section-alt" id="control">
+      <div class="container split">
+        <div class="split-media">
+          <!-- IMAGE PLACEHOLDER -->
+          <figure class="shot placeholder" data-label="Server list & command panel" data-ratio="4 / 3">
+            <figcaption>Server list &amp; command panel</figcaption>
+          </figure>
+        </div>
+        <div class="split-copy">
+          <span class="eyebrow">Command &amp; control</span>
+          <h2>Drive every server from one screen</h2>
+          <p>
+            Connect all your TSplus machines and operate them as a fleet. TSplus Manager
+            speaks directly to <strong>Remote Access</strong> and <strong>Advanced Security</strong>,
+            so you can apply changes, react to threats, and enforce policy without a
+            remote desktop session per box.
+          </p>
+          <ul class="check-list">
+            <li>Push commands to a single server or in bulk</li>
+            <li>Manage Advanced Security rules and Remote Access settings</li>
+            <li>Real-time session &amp; user listings, with disconnect and logout</li>
+            <li>Read and update general TSplus product configuration</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">See it live</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MONITORING (image right) ===================== -->
+    <section class="section" id="monitoring">
+      <div class="container split reverse">
+        <div class="split-media">
+          <!-- IMAGE PLACEHOLDER -->
+          <figure class="shot placeholder" data-label="Live sessions & log monitoring" data-ratio="4 / 3">
+            <figcaption>Live sessions &amp; log monitoring</figcaption>
+          </figure>
+        </div>
+        <div class="split-copy">
+          <span class="eyebrow">Visibility</span>
+          <h2>Know exactly what's happening, right now</h2>
+          <p>
+            Receive live data straight from your servers: who's connected, which sessions
+            are open, and what the logs are telling you. Turn raw activity into decisions
+            and keep your environment healthy and secure.
+          </p>
+          <ul class="check-list">
+            <li>Real-time session and user monitoring</li>
+            <li>One-click disconnect and logout</li>
+            <li>Centralized log streaming and auditing</li>
+            <li>Fleet-wide health at a glance</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Book a walkthrough</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRIVATE AI ===================== -->
+    <section class="section section-dark" id="ai">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow light">Intelligence, kept private</span>
+          <h2>A private AI that never leaks your data</h2>
+          <p class="section-sub light">
+            TSplus Manager integrates with <strong>private, self-hosted AI models</strong>.
+            Ask about sessions, logs, or configuration in natural language and get
+            answers — while your information stays inside your infrastructure, never
+            handed to commercial AI providers.
+          </p>
+        </div>
+
+        <div class="ai-layout">
+          <div class="ai-points">
+            <div class="ai-point">
+              <div class="feature-icon">🔒</div>
+              <div>
+                <h3>Data stays yours</h3>
+                <p>Runs on private models, so sensitive server data is never shared with third-party clouds.</p>
+              </div>
+            </div>
+            <div class="ai-point">
+              <div class="feature-icon">💬</div>
+              <div>
+                <h3>Ask in plain language</h3>
+                <p>"Which users are connected to Server 3?" or "Show me errors in the last hour" — just ask.</p>
+              </div>
+            </div>
+            <div class="ai-point">
+              <div class="feature-icon">🧭</div>
+              <div>
+                <h3>Guided actions</h3>
+                <p>Surface issues from logs and sessions, then act on them directly from the same console.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ai-media">
+            <!-- IMAGE PLACEHOLDER -->
+            <figure class="shot placeholder on-dark" data-label="AI assistant view" data-ratio="4 / 3">
+              <figcaption>AI assistant view</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLATFORMS ===================== -->
+    <section class="section" id="platforms">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Everywhere you work</span>
+          <h2>Desktop and mobile, fully native</h2>
+          <p class="section-sub">
+            Administer your servers from the office or from your pocket. TSplus Manager
+            ships as a desktop app for Windows, Linux and macOS, and as a mobile app for
+            Android and iOS.
+          </p>
+        </div>
+
+        <div class="platform-cards">
+          <div class="platform-card">
+            <div class="platform-icon">💻</div>
+            <h3>Desktop</h3>
+            <ul>
+              <li>Windows</li>
+              <li>Linux</li>
+              <li>macOS</li>
+            </ul>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">📱</div>
+            <h3>Mobile</h3>
+            <ul>
+              <li>Android</li>
+              <li>iOS</li>
+            </ul>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">🔌</div>
+            <h3>APIs included</h3>
+            <p>TSplus Manager provides all the connection APIs and everything needed to run on any TSplus server.</p>
+          </div>
+        </div>
+
+        <!-- IMAGE PLACEHOLDER: platform showcase -->
+        <figure class="shot shot-wide placeholder" data-label="Desktop + mobile app showcase" data-ratio="16 / 7">
+          <figcaption>Desktop &amp; mobile showcase image</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BANNER ===================== -->
+    <section class="cta-banner">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to centralize your TSplus servers?</h2>
+          <p>See TSplus Manager in action with your own environment in mind.</p>
+        </div>
+        <a href="#contact" class="btn btn-light btn-lg">Request a demo</a>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Talk to us about TSplus Manager</h2>
+          <p>
+            Tell us about your TSplus environment and we'll show you how TSM can bring it
+            all under one console. We usually reply within one business day.
+          </p>
+          <a class="contact-email" href="mailto:contact@tsplusmanager.com">
+            <span class="feature-icon">✉️</span>
+            contact@tsplusmanager.com
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="servers">Number of TSplus servers</label>
+              <input type="text" id="servers" name="servers" inputmode="numeric" placeholder="e.g. 12" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <img src="assets/tsm-logo.png" alt="TSplus" />
+          <span class="brand-badge">Manager</span>
+        </span>
+        <p>The central command console for your TSplus fleet — on desktop and mobile.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div>
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#control">Control</a>
+          <a href="#ai">Private AI</a>
+          <a href="#platforms">Platforms</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:contact@tsplusmanager.com">contact@tsplusmanager.com</a>
+          <a href="#contact">Request a demo</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span id="year"></span> TSplus Manager. All rights reserved.</span>
+      <span class="footer-muted">TSplus Manager is an administration tool for TSplus servers.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
