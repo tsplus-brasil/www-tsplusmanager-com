@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TSplus Manager — Centralized Administration for Your TSplus Servers</title>
-  <meta name="description" content="TSplus Manager (TSM) is the central command center for your TSplus fleet. Manage servers, sessions and users, push Remote Access & Advanced Security commands, monitor logs, and get answers from a private, self-hosted AI — on desktop and mobile." />
+  <title data-i18n="meta.title">TSplus Manager — The command center for all your TSplus servers</title>
+  <meta name="description" data-i18n-content="meta.desc" content="Monitor, automate and secure every TSplus server from one native app for desktop and mobile. No inbound ports, no VPN — servers behind NAT and CGNAT included." />
   <meta name="theme-color" content="#F7931E" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="TSplus Manager — Centralized TSplus Server Administration" />
-  <meta property="og:description" content="One console for every TSplus server. Commands, sessions, logs and a private AI assistant across desktop and mobile." />
-  <meta property="og:image" content="https://i.imgur.com/X2EMo3G.png" />
+  <meta property="og:title" content="TSplus Manager — The command center for all your TSplus servers" />
+  <meta property="og:description" content="Monitor, automate and secure every TSplus server from one native app for desktop and mobile. No inbound ports, no VPN." />
+  <meta property="og:image" content="https://tsplusmanager.com/assets/screens/desktop-dashboard.webp" />
   <meta property="og:url" content="https://tsplusmanager.com" />
+
+  <link rel="alternate" hreflang="x-default" href="https://tsplusmanager.com/" />
+  <link rel="alternate" hreflang="en" href="https://tsplusmanager.com/?lang=en" />
+  <link rel="alternate" hreflang="pt-BR" href="https://tsplusmanager.com/?lang=pt-BR" />
+  <link rel="alternate" hreflang="es" href="https://tsplusmanager.com/?lang=es" />
+  <link rel="alternate" hreflang="fr" href="https://tsplusmanager.com/?lang=fr" />
+  <link rel="alternate" hreflang="de" href="https://tsplusmanager.com/?lang=de" />
+  <link rel="alternate" hreflang="it" href="https://tsplusmanager.com/?lang=it" />
+  <link rel="alternate" hreflang="ru" href="https://tsplusmanager.com/?lang=ru" />
+  <link rel="alternate" hreflang="tr" href="https://tsplusmanager.com/?lang=tr" />
+  <link rel="alternate" hreflang="ar" href="https://tsplusmanager.com/?lang=ar" />
+  <link rel="alternate" hreflang="hi" href="https://tsplusmanager.com/?lang=hi" />
+  <link rel="alternate" hreflang="zh-CN" href="https://tsplusmanager.com/?lang=zh-CN" />
+  <link rel="alternate" hreflang="ja" href="https://tsplusmanager.com/?lang=ja" />
+  <link rel="alternate" hreflang="ko" href="https://tsplusmanager.com/?lang=ko" />
 
   <link rel="icon" type="image/png" href="assets/tsm-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,26 +36,76 @@
 </head>
 <body>
 
+  <!-- ===================== ICON SPRITE (line icons, 24px grid) ===================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></symbol>
+      <symbol id="i-topology" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="m6.5 6.5 3.7 3.7M17.5 6.5l-3.7 3.7M6.5 17.5l3.7-3.7M17.5 17.5l-3.7-3.7"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12L16 12h5"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9"/><path d="M10 20a2.2 2.2 0 0 0 4 0"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4.9 18.5a9 9 0 1 1 14.2 0"/><path d="m12 13 4-5"/><circle cx="12" cy="13" r="1.4"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M2.8 20c.4-3.4 3-5.6 6.2-5.6s5.8 2.2 6.2 5.6"/><path d="M16 4.6a3.3 3.3 0 0 1 0 6.6M21.2 20c-.3-2.4-1.5-4.1-3.3-4.9"/></symbol>
+      <symbol id="i-playbook" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="18" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/></symbol>
+      <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6z"/><path d="M12 8.5v4M12 15.5h.01"/></symbol>
+      <symbol id="i-approve" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12 2.2 2.2 4.3-4.4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3 4v4.5h4.5"/><path d="M12 8v4.2l3 1.8"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="14.5" r="4"/><path d="m10.4 11.6 8.6-8.6M16 6l2.5 2.5M14 8l2 2"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/></symbol>
+      <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 5.1A9.8 9.8 0 0 1 12 5c5 0 8.5 4.5 9.5 7-.4 1-1.2 2.3-2.3 3.5M6.6 6.6C4.6 7.9 3.1 10 2.5 12c1 2.5 4.5 7 9.5 7 1.8 0 3.4-.6 4.8-1.4"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+      <symbol id="i-list-check" viewBox="0 0 24 24"><path d="M11 6h10M11 12h10M11 18h10"/><path d="m3 6 1.5 1.5L7.5 4.5M3 12l1.5 1.5 3-3M3 18l1.5 1.5 3-3"/></symbol>
+      <symbol id="i-no-port" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9S9.4 5.5 12 3z"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+      <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.7-4.3L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0 0 14.7 4.3L21 15"/><path d="M21 20v-5h-5"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.5 1.6A3.8 3.8 0 0 1 17.5 18.5z"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5.5A1.5 1.5 0 0 1 5.5 4h8A1.5 1.5 0 0 1 15 5.5V21"/><path d="M15 10h3.5a1.5 1.5 0 0 1 1.5 1.5V21M3 21h18"/><path d="M8 8h3M8 12h3M8 16h3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+      <symbol id="i-language" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M11 5c-.8 4-3.4 7.3-7 9"/><path d="M6 9c1.2 2 3 3.6 5 4.5"/><path d="m12 21 4.5-10 4.5 10M13.6 17.5h5.8"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-worker" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 9l3 3-3 3M13 15h3"/></symbol>
+      <symbol id="i-tunnel" viewBox="0 0 24 24"><path d="M3 20V11a9 9 0 0 1 18 0v9"/><path d="M7 20v-8a5 5 0 0 1 10 0v8"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="m9 13.8-1.5 7.2L12 19l4.5 2-1.5-7.2"/><path d="m12 6.5.8 1.7 1.8.2-1.4 1.2.4 1.8-1.6-.9-1.6.9.4-1.8L9.4 8.4l1.8-.2z"/></symbol>
+    </defs>
+  </svg>
+
   <!-- ===================== HEADER / NAV ===================== -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="TSplus Manager home">
+      <a href="#top" class="brand" aria-label="TSplus Manager">
         <img src="assets/tsm-logo.png" alt="TSplus" class="brand-logo" />
         <span class="brand-badge">Manager</span>
       </a>
 
       <nav class="nav" id="primaryNav" aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#control">Control</a>
-        <a href="#ai">Private AI</a>
-        <a href="#platforms">Platforms</a>
-        <a href="https://downloads.tsplusmanager.com">Downloads</a>
-        <a href="#contact">Contact</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#security" data-i18n="nav.security">Security</a>
+        <a href="#platforms" data-i18n="nav.platforms">Platforms</a>
+        <a href="#plans" data-i18n="nav.plans">Plans</a>
+        <a href="https://downloads.tsplusmanager.com" data-i18n="nav.downloads">Downloads</a>
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn btn-primary btn-sm">Request a demo</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <div class="lang" id="langSwitcher">
+          <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+            <svg class="ic"><use href="#i-language"/></svg>
+            <span id="langCurrent">EN</span>
+            <svg class="ic ic-sm"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox"></ul>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-sm hide-sm" data-i18n="cta.demo">Request a demo</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -55,216 +119,237 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">TSplus Manager · TSM</span>
-          <h1>One console to command<br>your entire <span class="accent">TSplus fleet</span>.</h1>
-          <p class="lead">
-            Centralize every TSplus server in a single place. Push Remote Access &amp;
-            Advanced Security commands, watch sessions and users in real time, monitor
-            logs, and ask a <strong>private AI</strong> — all from desktop and mobile.
-          </p>
+          <span class="eyebrow">TSplus Manager</span>
+          <h1><span data-i18n="hero.title1">Every TSplus server.</span><br><span class="accent" data-i18n="hero.title2">One command center.</span></h1>
+          <p class="lead" data-i18n="hero.lead">Monitor, automate and secure all your TSplus servers from a single native app on desktop and mobile — even servers behind NAT or CGNAT, with no inbound ports and no VPN.</p>
           <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary btn-lg">Request a demo</a>
-            <a href="#features" class="btn btn-ghost btn-lg">Explore features</a>
+            <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta.demo">Request a demo</span><svg class="ic flip-rtl"><use href="#i-arrow"/></svg></a>
+            <a href="#how" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">See how it works</a>
           </div>
-          <ul class="hero-platforms" aria-label="Supported platforms">
-            <li>Windows</li>
-            <li>Linux</li>
-            <li>macOS</li>
-            <li class="sep">·</li>
-            <li>Android</li>
-            <li>iOS</li>
+          <ul class="hero-badges">
+            <li><svg class="ic"><use href="#i-no-port"/></svg><span data-i18n="hero.b1">No inbound ports</span></li>
+            <li><svg class="ic"><use href="#i-bolt"/></svg><span data-i18n="hero.b2">Real-time</span></li>
+            <li><svg class="ic"><use href="#i-monitor"/></svg><span data-i18n="hero.b3">Desktop &amp; mobile</span></li>
           </ul>
         </div>
 
         <div class="hero-media">
-          <!-- IMAGE PLACEHOLDER: main dashboard -->
-          <figure class="shot shot-hero placeholder" data-label="Main dashboard screenshot" data-ratio="16 / 10">
-            <figcaption>Drop your dashboard screenshot here</figcaption>
+          <figure class="shot shot-hero">
+            <img src="assets/screens/desktop-dashboard.webp" width="2000" height="1229" alt="TSplus Manager dashboard" fetchpriority="high" />
           </figure>
-          <!-- IMAGE PLACEHOLDER: mobile app, floating -->
-          <figure class="shot shot-mobile placeholder" data-label="Mobile app" data-ratio="9 / 19">
-            <figcaption>Mobile app</figcaption>
+          <figure class="device phone phone-hero">
+            <img src="assets/screens/phone-dashboard.webp" width="600" height="1304" alt="TSplus Manager mobile app" />
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== STATS / TRUST BAR ===================== -->
+    <!-- ===================== STATS ===================== -->
     <section class="stats">
       <div class="container stats-grid">
         <div class="stat">
-          <span class="stat-num">1</span>
-          <span class="stat-label">Console for unlimited servers</span>
+          <span class="stat-icon"><svg class="ic"><use href="#i-no-port"/></svg></span>
+          <span class="stat-num">0</span>
+          <span class="stat-label" data-i18n="stats.s1">inbound ports to open on your servers</span>
         </div>
         <div class="stat">
+          <span class="stat-icon"><svg class="ic"><use href="#i-layers"/></svg></span>
           <span class="stat-num">5</span>
-          <span class="stat-label">Platforms — Windows, Linux, macOS, Android, iOS</span>
+          <span class="stat-label" data-i18n="stats.s2">native platforms: Windows, macOS, Linux, iOS and Android</span>
         </div>
         <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Private AI — your data never leaves your control</span>
+          <span class="stat-icon"><svg class="ic"><use href="#i-bolt"/></svg></span>
+          <span class="stat-num" data-i18n="stats.n3">Live</span>
+          <span class="stat-label" data-i18n="stats.s3">metrics, sessions and alerts pushed instantly</span>
         </div>
         <div class="stat">
-          <span class="stat-num">Full</span>
-          <span class="stat-label">Connection APIs included out of the box</span>
+          <span class="stat-icon"><svg class="ic"><use href="#i-globe"/></svg></span>
+          <span class="stat-num" data-i18n="stats.n4">Global</span>
+          <span class="stat-label" data-i18n="stats.s4">edge network for low latency anywhere</span>
         </div>
       </div>
     </section>
 
-    <!-- ===================== FEATURES GRID ===================== -->
+    <!-- ===================== PROBLEM / SOLUTION ===================== -->
+    <section class="section" id="problem">
+      <div class="container problem">
+        <div class="problem-card problem-before">
+          <span class="eyebrow eyebrow-muted" data-i18n="problem.eyebrow">The challenge</span>
+          <h2 data-i18n="problem.title">Your servers live behind NAT. Managing them shouldn't mean opening doors.</h2>
+          <p data-i18n="problem.text">TSplus servers usually sit inside farms, branch offices and customer networks — often behind CGNAT. Reaching them traditionally means compromises:</p>
+          <ul class="x-list">
+            <li><svg class="ic"><use href="#i-x"/></svg><span data-i18n="problem.p1">Port forwarding and firewall exceptions</span></li>
+            <li><svg class="ic"><use href="#i-x"/></svg><span data-i18n="problem.p2">VPNs to deploy and maintain for every site</span></li>
+            <li><svg class="ic"><use href="#i-x"/></svg><span data-i18n="problem.p3">Servers behind CGNAT that are simply unreachable</span></li>
+            <li><svg class="ic"><use href="#i-x"/></svg><span data-i18n="problem.p4">One remote desktop session per server, per task</span></li>
+          </ul>
+        </div>
+        <div class="problem-card problem-after">
+          <span class="eyebrow light" data-i18n="solution.eyebrow">The TSplus Manager way</span>
+          <h2 data-i18n="solution.title">We reversed the connection.</h2>
+          <p data-i18n="solution.text">A lightweight Worker service on each Windows server connects outward to our secure relay through an encrypted tunnel. Nothing to open, nothing exposed — and it works from any network.</p>
+          <ul class="check-list on-dark">
+            <li data-i18n="solution.p1">Outbound-only connection, works behind CGNAT</li>
+            <li data-i18n="solution.p2">No VPN, no port forwarding, no public IP</li>
+            <li data-i18n="solution.p3">Every server managed from one console</li>
+            <li data-i18n="solution.p4">Deployed in minutes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+          <h2 data-i18n="how.title">Up and running in three steps</h2>
+        </div>
+
+        <div class="flow" aria-hidden="true">
+          <div class="flow-node">
+            <div class="flow-icon"><svg class="ic"><use href="#i-server"/></svg></div>
+            <strong data-i18n="dg.servers">TSplus servers</strong>
+            <small data-i18n="dg.servers2">Any network · NAT · CGNAT</small>
+            <span class="flow-chip"><svg class="ic"><use href="#i-worker"/></svg>Worker</span>
+          </div>
+          <div class="flow-link"><span class="flow-label"><svg class="ic"><use href="#i-lock"/></svg><span data-i18n="dg.out">Outbound · encrypted</span></span><i></i></div>
+          <div class="flow-node flow-core">
+            <div class="flow-icon"><svg class="ic"><use href="#i-tunnel"/></svg></div>
+            <strong data-i18n="dg.relay">Secure relay &amp; API</strong>
+            <small data-i18n="dg.relay2">Protected by a global edge network</small>
+          </div>
+          <div class="flow-link"><span class="flow-label"><svg class="ic"><use href="#i-bolt"/></svg><span data-i18n="dg.live">Real-time</span></span><i></i></div>
+          <div class="flow-node">
+            <div class="flow-icon"><svg class="ic"><use href="#i-monitor"/></svg></div>
+            <strong data-i18n="dg.apps">Your team</strong>
+            <small data-i18n="dg.apps2">Desktop · tablet · phone</small>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3 data-i18n="how.s1t">Install the Worker</h3>
+            <p data-i18n="how.s1">A lightweight Windows service on each TSplus server. It only makes outbound connections.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3 data-i18n="how.s2t">A secure tunnel opens</h3>
+            <p data-i18n="how.s2">The Worker keeps an encrypted, authenticated and continuously validated tunnel to the TSplus Manager relay.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3 data-i18n="how.s3t">Manage from anywhere</h3>
+            <p data-i18n="how.s3">Open the app on your desktop, tablet or phone and operate every server in real time.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
     <section class="section" id="features">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Everything in one place</span>
-          <h2>Built to manage TSplus at scale</h2>
-          <p class="section-sub">
-            TSplus Manager talks natively to Remote Access and Advanced Security on
-            every server, so you administer the whole environment without jumping
-            between machines.
-          </p>
+          <span class="eyebrow" data-i18n="features.eyebrow">Key features</span>
+          <h2 data-i18n="features.title">Built to operate TSplus at scale</h2>
+          <p class="section-sub" data-i18n="features.sub">From a single server to hundreds across datacenters and farms, TSplus Manager gives your team visibility, control and automation in one console.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
-            <h3>Centralized servers</h3>
-            <p>Register and group all your TSplus servers into a single, organized console with health at a glance.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
-            <h3>Remote commands</h3>
-            <p>Send commands to Remote Access and Advanced Security across one server or many — instantly and securely.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6M21 20c0-2.6-1.4-4.6-3.5-5.2"/></svg></div>
-            <h3>Sessions &amp; users</h3>
-            <p>List active sessions and users in real time, then disconnect or log out any user with a single click.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h8M16 6h4M4 12h4M12 12h8M4 18h12M18 18h2"/><circle cx="14" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></svg></div>
-            <h3>Product configuration</h3>
-            <p>Read and manage the general settings of your TSplus products remotely, keeping every server consistent.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2.5-6H21"/></svg></div>
-            <h3>Log monitoring</h3>
-            <p>Stream and monitor logs from your servers to spot issues, audit activity, and stay ahead of incidents.</p>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"/></svg></div>
-            <h3>Private AI assistant</h3>
-            <p>Query your fleet in plain language with self-hosted AI models — insights without sending data to commercial clouds.</p>
-          </article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-topology"/></svg></div><h3 data-i18n="f.topology.t">Real-time view of your entire environment</h3><p data-i18n="f.topology">Datacenters, farms, servers and sessions on one live screen — your whole TSplus environment at a glance.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-pulse"/></svg></div><h3 data-i18n="f.monitor.t">Real-time metrics &amp; history</h3><p data-i18n="f.monitor">Live CPU, memory, disk, sessions and uptime for each server, with history from 1 hour to 7 days.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-layers"/></svg></div><h3 data-i18n="f.farms.t">Farm monitoring</h3><p data-i18n="f.farms">Track the health and load of each TSplus farm and of every server inside it.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-bolt"/></svg></div><h3 data-i18n="f.commands.t">Send and run commands</h3><p data-i18n="f.commands">Execute commands on one server or many at once and follow every step and result live.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-clock"/></svg></div><h3 data-i18n="f.scheduler.t">Command scheduling</h3><p data-i18n="f.scheduler">Schedule commands for the right moment — recurring tasks and maintenance windows, with pause and resume.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-approve"/></svg></div><h3 data-i18n="f.approval.t">User hierarchy &amp; strict approvals</h3><p data-i18n="f.approval">A role hierarchy with granular permissions and rigorous approval rules before sensitive commands can run.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-bell"/></svg></div><h3 data-i18n="f.notify.t">Real-time alerts</h3><p data-i18n="f.notify">Instant alerts with relevant context: servers offline or back online, and CPU, memory or disk above their limits.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-monitor"/></svg></div><h3 data-i18n="f.ra.t">Native TSplus Remote Access integration</h3><p data-i18n="f.ra">Works directly with TSplus Remote Access: sessions, users, configuration and administration actions.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-lock"/></svg></div><h3 data-i18n="f.tunnel.t">Encrypted tunnel</h3><p data-i18n="f.tunnel">Every controlled host talks to TSplus Manager through an encrypted, authenticated tunnel — with no open ports.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-history"/></svg></div><h3 data-i18n="f.history.t">Fully auditable commands</h3><p data-i18n="f.history">Every execution is recorded with the user, date and time, target, duration and result.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-playbook"/></svg></div><h3 data-i18n="f.playbooks.t">Playbook catalog</h3><p data-i18n="f.playbooks">Ready-made TSplus administration actions: back up and restore configuration, activate licenses, manage two-factor users, set the proxy, run a system audit and more.</p></article>
+          <article class="feature-card"><div class="feature-icon"><svg class="ic"><use href="#i-users"/></svg></div><h3 data-i18n="f.sessions.t">Session control</h3><p data-i18n="f.sessions">See who is connected, send a message, disconnect or log off any session in one tap.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CONTROL / REMOTE COMMANDS (image left) ===================== -->
-    <section class="section section-alt" id="control">
+    <!-- ===================== SHOWCASE 1: MONITORING ===================== -->
+    <section class="section section-alt" id="monitoring">
       <div class="container split">
         <div class="split-media">
-          <!-- IMAGE PLACEHOLDER -->
-          <figure class="shot placeholder" data-label="Server list & command panel" data-ratio="4 / 3">
-            <figcaption>Server list &amp; command panel</figcaption>
-          </figure>
+          <figure class="shot"><img src="assets/screens/desktop-server.webp" width="2000" height="1229" alt="Server monitoring" loading="lazy" /></figure>
+          <figure class="device phone phone-float"><img src="assets/screens/phone-metrics.webp" width="600" height="1304" alt="" loading="lazy" /></figure>
         </div>
         <div class="split-copy">
-          <span class="eyebrow">Command &amp; control</span>
-          <h2>Drive every server from one screen</h2>
-          <p>
-            Connect all your TSplus machines and operate them as a fleet. TSplus Manager
-            speaks directly to <strong>Remote Access</strong> and <strong>Advanced Security</strong>,
-            so you can apply changes, react to threats, and enforce policy without a
-            remote desktop session per box.
-          </p>
+          <span class="eyebrow" data-i18n="sc1.eyebrow">Visibility</span>
+          <h2 data-i18n="sc1.title">Know exactly what is happening, right now</h2>
+          <p data-i18n="sc1.text">Live data streams straight from each server to every connected app. See load, sessions and health in real time and act before users notice a problem.</p>
           <ul class="check-list">
-            <li>Push commands to a single server or in bulk</li>
-            <li>Manage Advanced Security rules and Remote Access settings</li>
-            <li>Real-time session &amp; user listings, with disconnect and logout</li>
-            <li>Read and update general TSplus product configuration</li>
+            <li data-i18n="sc1.p1">Live CPU, memory, disk and session metrics</li>
+            <li data-i18n="sc1.p2">History ranges from 1 hour to 7 days</li>
+            <li data-i18n="sc1.p3">Configurable alert limits for each server</li>
+            <li data-i18n="sc1.p4">Online / offline status and uptime</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">See it live</a>
         </div>
       </div>
     </section>
 
-    <!-- ===================== MONITORING (image right) ===================== -->
-    <section class="section" id="monitoring">
+    <!-- ===================== SHOWCASE 2: PLAYBOOKS ===================== -->
+    <section class="section" id="automation">
       <div class="container split reverse">
         <div class="split-media">
-          <!-- IMAGE PLACEHOLDER -->
-          <figure class="shot placeholder" data-label="Live sessions & log monitoring" data-ratio="4 / 3">
-            <figcaption>Live sessions &amp; log monitoring</figcaption>
-          </figure>
+          <figure class="shot"><img src="assets/screens/desktop-playbooks.webp" width="2000" height="1229" alt="Playbook catalog" loading="lazy" /></figure>
         </div>
         <div class="split-copy">
-          <span class="eyebrow">Visibility</span>
-          <h2>Know exactly what's happening, right now</h2>
-          <p>
-            Receive live data straight from your servers: who's connected, which sessions
-            are open, and what the logs are telling you. Turn raw activity into decisions
-            and keep your environment healthy and secure.
-          </p>
+          <span class="eyebrow" data-i18n="sc2.eyebrow">Automation</span>
+          <h2 data-i18n="sc2.title">Standardize administration with playbooks</h2>
+          <p data-i18n="sc2.text">Turn routine TSplus administration into safe, repeatable actions. Pick a playbook, choose the servers and run it now or on a schedule.</p>
           <ul class="check-list">
-            <li>Real-time session and user monitoring</li>
-            <li>One-click disconnect and logout</li>
-            <li>Centralized log streaming and auditing</li>
-            <li>Fleet-wide health at a glance</li>
+            <li data-i18n="sc2.p1">Versioned playbooks you can enable or disable</li>
+            <li data-i18n="sc2.p2">Impact level shown on every action</li>
+            <li data-i18n="sc2.p3">Approval policies for sensitive changes</li>
+            <li data-i18n="sc2.p4">Run on one server or many, now or scheduled</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">Book a walkthrough</a>
         </div>
       </div>
     </section>
 
-    <!-- ===================== PRIVATE AI ===================== -->
-    <section class="section section-dark" id="ai">
+    <!-- ===================== SHOWCASE 3: GOVERNANCE ===================== -->
+    <section class="section section-alt" id="governance">
+      <div class="container split">
+        <div class="split-media">
+          <figure class="shot"><img src="assets/screens/desktop-history.webp" width="2000" height="1229" alt="Command history" loading="lazy" /></figure>
+          <figure class="shot shot-overlap"><img src="assets/screens/desktop-sessions.webp" width="2000" height="1229" alt="" loading="lazy" /></figure>
+        </div>
+        <div class="split-copy">
+          <span class="eyebrow" data-i18n="sc3.eyebrow">Governance</span>
+          <h2 data-i18n="sc3.title">Every action accounted for</h2>
+          <p data-i18n="sc3.text">Who did what, where and when — with the full result. Ready for audits, troubleshooting and compliance reviews.</p>
+          <ul class="check-list">
+            <li data-i18n="sc3.p1">Complete command history with results and logs</li>
+            <li data-i18n="sc3.p2">Filters by state, user, target and date range</li>
+            <li data-i18n="sc3.p3">Step-by-step details and raw output</li>
+            <li data-i18n="sc3.p4">Run any command again in one click</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECURITY ===================== -->
+    <section class="section section-dark" id="security">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow light">Intelligence, kept private</span>
-          <h2>A private AI that never leaks your data</h2>
-          <p class="section-sub light">
-            TSplus Manager integrates with <strong>private, self-hosted AI models</strong>.
-            Ask about sessions, logs, or configuration in natural language and get
-            answers — while your information stays inside your infrastructure, never
-            handed to commercial AI providers.
-          </p>
+          <span class="eyebrow light" data-i18n="sec.eyebrow">Security by design</span>
+          <h2 data-i18n="sec.title">Secure by architecture, not by exception</h2>
+          <p class="section-sub light" data-i18n="sec.sub">TSplus Manager was designed so that your servers never have to be exposed to the internet to be managed.</p>
         </div>
-
-        <div class="ai-layout">
-          <div class="ai-points">
-            <div class="ai-point">
-              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-              <div>
-                <h3>Data stays yours</h3>
-                <p>Runs on private models, so sensitive server data is never shared with third-party clouds.</p>
-              </div>
-            </div>
-            <div class="ai-point">
-              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div>
-              <div>
-                <h3>Ask in plain language</h3>
-                <p>"Which users are connected to Server 3?" or "Show me errors in the last hour" — just ask.</p>
-              </div>
-            </div>
-            <div class="ai-point">
-              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11z"/></svg></div>
-              <div>
-                <h3>Guided actions</h3>
-                <p>Surface issues from logs and sessions, then act on them directly from the same console.</p>
-              </div>
-            </div>
-          </div>
-          <div class="ai-media">
-            <!-- IMAGE PLACEHOLDER -->
-            <figure class="shot placeholder on-dark" data-label="AI assistant view" data-ratio="4 / 3">
-              <figcaption>AI assistant view</figcaption>
-            </figure>
-          </div>
+        <div class="sec-grid">
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-no-port"/></svg></div><h3 data-i18n="sec.c1t">Zero inbound exposure</h3><p data-i18n="sec.c1">Servers never accept incoming connections from the internet. The Worker only connects outward.</p></div>
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-lock"/></svg></div><h3 data-i18n="sec.c2t">Encrypted, validated tunnel</h3><p data-i18n="sec.c2">Every connection is encrypted and authenticated, with continuous checks on all traffic crossing the tunnel.</p></div>
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-eye-off"/></svg></div><h3 data-i18n="sec.c3t">Hidden infrastructure</h3><p data-i18n="sec.c3">The platform runs behind a global edge network with DDoS protection. Origin servers are never exposed.</p></div>
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-list-check"/></svg></div><h3 data-i18n="sec.c4t">Catalogued actions only</h3><p data-i18n="sec.c4">Workers run only known, catalogued actions — never arbitrary commands sent from outside.</p></div>
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-approve"/></svg></div><h3 data-i18n="sec.c5t">Least-privilege access</h3><p data-i18n="sec.c5">Granular permissions and approval policies keep sensitive actions in the right hands.</p></div>
+          <div class="sec-card"><div class="feature-icon"><svg class="ic"><use href="#i-history"/></svg></div><h3 data-i18n="sec.c6t">Full traceability</h3><p data-i18n="sec.c6">Every command is logged and auditable, from request to result.</p></div>
         </div>
       </div>
     </section>
@@ -273,44 +358,79 @@
     <section class="section" id="platforms">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Everywhere you work</span>
-          <h2>Desktop and mobile, fully native</h2>
-          <p class="section-sub">
-            Administer your servers from the office or from your pocket. TSplus Manager
-            ships as a desktop app for Windows, Linux and macOS, and as a mobile app for
-            Android and iOS.
-          </p>
+          <span class="eyebrow" data-i18n="pl.eyebrow">Everywhere you work</span>
+          <h2 data-i18n="pl.title">Native apps for desktop, tablet and phone</h2>
+          <p class="section-sub" data-i18n="pl.sub">A true enterprise application, installed on the devices your team already uses — not just another browser tab.</p>
         </div>
 
         <div class="platform-cards">
-          <div class="platform-card">
-            <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
-            <h3>Desktop</h3>
-            <ul>
-              <li>Windows</li>
-              <li>Linux</li>
-              <li>macOS</li>
-            </ul>
-          </div>
-          <div class="platform-card">
-            <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
-            <h3>Mobile</h3>
-            <ul>
-              <li>Android</li>
-              <li>iOS</li>
-            </ul>
-          </div>
-          <div class="platform-card">
-            <div class="platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></svg></div>
-            <h3>APIs included</h3>
-            <p>TSplus Manager provides all the connection APIs and everything needed to run on any TSplus server.</p>
-          </div>
+          <div class="platform-card"><div class="platform-icon"><svg class="ic"><use href="#i-monitor"/></svg></div><h3 data-i18n="pl.desktop">Desktop</h3><p>Windows · macOS · Linux</p></div>
+          <div class="platform-card"><div class="platform-icon"><svg class="ic"><use href="#i-phone"/></svg></div><h3 data-i18n="pl.mobile">Mobile &amp; tablet</h3><p>iOS · iPadOS · Android</p></div>
+          <div class="platform-card"><div class="platform-icon"><svg class="ic"><use href="#i-sync"/></svg></div><h3 data-i18n="pl.sync">Always in sync</h3><p data-i18n="pl.syncd">Changes are pushed live to every device the moment they happen.</p></div>
         </div>
 
-        <!-- IMAGE PLACEHOLDER: platform showcase -->
-        <figure class="shot shot-wide placeholder" data-label="Desktop + mobile app showcase" data-ratio="16 / 7">
-          <figcaption>Desktop &amp; mobile showcase image</figcaption>
-        </figure>
+        <div class="gallery">
+          <figure class="device tablet"><img src="assets/screens/tablet-dashboard.webp" width="1000" height="1334" alt="Tablet dashboard" loading="lazy" /></figure>
+          <figure class="device phone"><img src="assets/screens/phone-menu.webp" width="600" height="1304" alt="" loading="lazy" /></figure>
+          <figure class="device phone"><img src="assets/screens/phone-sessions.webp" width="600" height="1304" alt="" loading="lazy" /></figure>
+          <figure class="device phone"><img src="assets/screens/phone-actions.webp" width="600" height="1304" alt="" loading="lazy" /></figure>
+          <figure class="device tablet"><img src="assets/screens/tablet-server.webp" width="1000" height="1334" alt="Tablet server detail" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PERFORMANCE ===================== -->
+    <section class="section section-alt" id="performance">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="perf.eyebrow">Performance</span>
+          <h2 data-i18n="perf.title">Fast everywhere, ready to scale</h2>
+        </div>
+        <div class="perf-grid">
+          <div class="perf-item"><div class="feature-icon"><svg class="ic"><use href="#i-globe"/></svg></div><div><h3 data-i18n="perf.g1t">Global edge network</h3><p data-i18n="perf.g1">Traffic is distributed through a worldwide edge network, keeping latency low wherever your team is.</p></div></div>
+          <div class="perf-item"><div class="feature-icon"><svg class="ic"><use href="#i-scale"/></svg></div><div><h3 data-i18n="perf.g2t">Elastic capacity</h3><p data-i18n="perf.g2">The relay and API scale horizontally — capacity grows with your infrastructure.</p></div></div>
+          <div class="perf-item"><div class="feature-icon"><svg class="ic"><use href="#i-bolt"/></svg></div><div><h3 data-i18n="perf.g3t">Real-time by default</h3><p data-i18n="perf.g3">Updates are pushed live to every connected app. No manual refresh needed.</p></div></div>
+          <div class="perf-item"><div class="feature-icon"><svg class="ic"><use href="#i-cpu"/></svg></div><div><h3 data-i18n="perf.g4t">High-performance core</h3><p data-i18n="perf.g4">A lean, compiled backend designed for high concurrency and a light footprint on your servers.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLANS ===================== -->
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="plans.eyebrow">Deployment options</span>
+          <h2 data-i18n="plans.title">Choose how you run TSplus Manager</h2>
+        </div>
+        <div class="plan-grid">
+          <div class="plan plan-featured">
+            <span class="plan-tag" data-i18n="plans.cloudTag">Recommended</span>
+            <div class="feature-icon"><svg class="ic"><use href="#i-cloud"/></svg></div>
+            <h3 data-i18n="plans.cloudT">Cloud subscription</h3>
+            <p data-i18n="plans.cloud">We host and operate the relay and API for you. Subscribe and start managing servers in minutes.</p>
+            <ul class="check-list">
+              <li data-i18n="plans.c1">No infrastructure to maintain</li>
+              <li data-i18n="plans.c2">Global edge network included</li>
+              <li data-i18n="plans.c3">Continuous updates</li>
+              <li data-i18n="plans.c4">Simple subscription model</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-i18n="plans.cta1">Start with Cloud</a>
+          </div>
+          <div class="plan">
+            <span class="plan-tag plan-tag-muted" data-i18n="plans.selfTag">Large environments</span>
+            <div class="feature-icon"><svg class="ic"><use href="#i-building"/></svg></div>
+            <h3 data-i18n="plans.selfT">Self-hosted</h3>
+            <p data-i18n="plans.self">Run the relay and API on your own infrastructure for full data sovereignty and specific compliance requirements.</p>
+            <ul class="check-list">
+              <li data-i18n="plans.s1">Full control of your data</li>
+              <li data-i18n="plans.s2">Your datacenter or private cloud</li>
+              <li data-i18n="plans.s3">Same apps and Workers</li>
+              <li data-i18n="plans.s4">Ideal for MSPs and large enterprises</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-i18n="plans.cta2">Talk to sales</a>
+          </div>
+        </div>
+        <p class="plans-note" data-i18n="plans.note">Contact us for pricing and early access.</p>
       </div>
     </section>
 
@@ -318,10 +438,10 @@
     <section class="cta-banner">
       <div class="container cta-inner">
         <div>
-          <h2>Ready to centralize your TSplus servers?</h2>
-          <p>See TSplus Manager in action with your own environment in mind.</p>
+          <h2 data-i18n="cta.title">Ready to bring every TSplus server under one console?</h2>
+          <p data-i18n="cta.text">See TSplus Manager in action with your own environment in mind.</p>
         </div>
-        <a href="#contact" class="btn btn-light btn-lg">Request a demo</a>
+        <a href="#contact" class="btn btn-light btn-lg" data-i18n="cta.demo">Request a demo</a>
       </div>
     </section>
 
@@ -329,44 +449,26 @@
     <section class="section" id="contact">
       <div class="container contact-layout">
         <div class="contact-copy">
-          <span class="eyebrow">Get in touch</span>
-          <h2>Talk to us about TSplus Manager</h2>
-          <p>
-            Tell us about your TSplus environment and we'll show you how TSM can bring it
-            all under one console. We usually reply within one business day.
-          </p>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+          <h2 data-i18n="contact.title">Talk to us about TSplus Manager</h2>
+          <p data-i18n="contact.text">Tell us about your TSplus environment and we will show you how TSplus Manager brings it all under one console. We usually reply within one business day.</p>
           <a class="contact-email" href="mailto:contact@tsplusmanager.com">
-            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
-            contact@tsplusmanager.com
+            <span class="feature-icon"><svg class="ic"><use href="#i-mail"/></svg></span>
+            <span dir="ltr">contact@tsplusmanager.com</span>
           </a>
         </div>
 
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" autocomplete="organization" />
-            </div>
+            <div class="field"><label for="name" data-i18n="form.name">Name</label><input type="text" id="name" name="name" autocomplete="name" required /></div>
+            <div class="field"><label for="company" data-i18n="form.company">Company</label><input type="text" id="company" name="company" autocomplete="organization" /></div>
           </div>
           <div class="form-row">
-            <div class="field">
-              <label for="email">Work email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required />
-            </div>
-            <div class="field">
-              <label for="servers">Number of TSplus servers</label>
-              <input type="text" id="servers" name="servers" inputmode="numeric" placeholder="e.g. 12" />
-            </div>
+            <div class="field"><label for="email" data-i18n="form.email">Work email</label><input type="email" id="email" name="email" autocomplete="email" required dir="ltr" /></div>
+            <div class="field"><label for="servers" data-i18n="form.servers">Number of TSplus servers</label><input type="text" id="servers" name="servers" inputmode="numeric" placeholder="12" /></div>
           </div>
-          <div class="field">
-            <label for="message">How can we help?</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <div class="field"><label for="message" data-i18n="form.message">How can we help?</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg" data-i18n="form.send">Send message</button>
           <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -377,34 +479,32 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">
-          <img src="assets/tsm-logo.png" alt="TSplus" />
-          <span class="brand-badge">Manager</span>
-        </span>
-        <p>The central command console for your TSplus fleet — on desktop and mobile.</p>
+        <span class="footer-logo"><img src="assets/tsm-logo.png" alt="TSplus" /><span class="brand-badge">Manager</span></span>
+        <p data-i18n="footer.tagline">The command center for your TSplus servers — on desktop and mobile.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <div>
-          <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#control">Control</a>
-          <a href="#ai">Private AI</a>
-          <a href="#platforms">Platforms</a>
-          <a href="https://downloads.tsplusmanager.com">Downloads</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="#how" data-i18n="nav.how">How it works</a>
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#security" data-i18n="nav.security">Security</a>
+          <a href="#plans" data-i18n="nav.plans">Plans</a>
+          <a href="https://downloads.tsplusmanager.com" data-i18n="nav.downloads">Downloads</a>
         </div>
         <div>
-          <h4>Contact</h4>
-          <a href="mailto:contact@tsplusmanager.com">contact@tsplusmanager.com</a>
-          <a href="#contact">Request a demo</a>
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <a href="mailto:contact@tsplusmanager.com" dir="ltr">contact@tsplusmanager.com</a>
+          <a href="#contact" data-i18n="cta.demo">Request a demo</a>
         </div>
       </nav>
     </div>
     <div class="container footer-bottom">
-      <span>&copy; <span id="year"></span> TSplus Manager. All rights reserved.</span>
-      <span class="footer-muted">TSplus Manager is an administration tool for TSplus servers.</span>
+      <span>&copy; <span id="year"></span> TSplus Manager. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span class="footer-muted" data-i18n="footer.disclaimer">TSplus Manager is an administration platform for TSplus servers.</span>
     </div>
   </footer>
 
+  <script src="i18n/languages.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
