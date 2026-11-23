@@ -64,7 +64,7 @@
     code = resolve(code) || 'en';
     if (code === 'en' || DICT[code]) { apply(code); return; }
     var s = document.createElement('script');
-    s.src = 'i18n/' + code + '.js';
+    s.src = 'i18n/' + code + '.js?v=20261123b';
     s.onload = function () { apply(DICT[code] ? code : 'en'); };
     s.onerror = function () { apply('en'); };
     document.head.appendChild(s);
