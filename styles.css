@@ -356,6 +356,7 @@ html[lang="ar"] .eyebrow, html[lang="hi"] .eyebrow { letter-spacing: 0; font-siz
 .footer-logo img { height: 26px; filter: brightness(0) invert(1); }
 .footer-logo .brand-badge { color: #fff; }
 .footer-brand p { color: rgba(255,255,255,.65); }
+.footer-logo-v { width: 110px; height: auto; margin-bottom: 1.2rem; }
 .footer-nav { display: flex; gap: 4rem; flex-wrap: wrap; }
 .footer-nav div { display: grid; gap: .6rem; align-content: start; }
 .footer-nav h4 { color: #fff; font-size: .95rem; margin-bottom: .3rem; }
